@@ -46,18 +46,41 @@
 // // This argument points to the object
 // // invoked with dot notation, happens at invocation time
 
-// Invoking through the costructor
-var Dog = function() {
-	var name, breed;
-	return console.dir(this);
+// // Invoking through the costructor
+// var Dog = function() {
+// 	var name, breed;
+// 	return console.dir(this);
+// }
+
+// firstDog = new Dog;
+// firstDog.name = "Rover";
+// firstDog.breed = "Doberman";
+
+// secondDog = new Dog;
+// secondDog.name = "Killer";
+// secondDog.breed = "Pit Bull";
+
+
+var speak = function(saywhat) {
+	console.log(saywhat);
 }
 
+var Dog = function() {
+	var name, breed;
+}
+var Cat = function() {
+	var name, breed;
+}
+
+Dog.prototype.speak = speak;
+Cat.prototype.speak = speak;
+
 firstDog = new Dog;
-firstDog.name = "Rover";
-firstDog.breed = "Doberman";
+firstDog.name = "Assagi";
+firstDog.breed = "African Hunting";
+firstDog.speak('Roarf!');
 
-secondDog = new Dog;
-secondDog.name = "Killer";
-secondDog.breed = "Pit Bull";
-
-
+firstCat = new Cat;
+firstCat.name = "Bagheera";
+firstCat.breed = "Leopard";
+firstCat.speak('Rawown!');
