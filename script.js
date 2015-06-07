@@ -47,3 +47,17 @@
 // // invoked with dot notation, happens at invocation time
 
 // Invoking through the costructor
+var Dog = function() {
+	var name, breed;
+	return console.dir(this);
+}
+
+firstDog = new Dog;
+firstDog.name = "Rover";
+firstDog.breed = "Doberman";
+
+secondDog = new Dog;
+secondDog.name = "Killer";
+secondDog.breed = "Pit Bull";
+
+
