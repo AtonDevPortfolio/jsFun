@@ -60,27 +60,37 @@
 // secondDog.name = "Killer";
 // secondDog.breed = "Pit Bull";
 
+// // Expanding functionality through prototypes.
+// var speak = function(saywhat) {
+// 	console.log(saywhat);
+// }
 
-var speak = function(saywhat) {
-	console.log(saywhat);
+// var Dog = function() {
+// 	var name, breed;
+// }
+// var Cat = function() {
+// 	var name, breed;
+// }
+
+// Dog.prototype.speak = speak;
+// Cat.prototype.speak = speak;
+
+// firstDog = new Dog;
+// firstDog.name = "Assagi";
+// firstDog.breed = "African Hunting";
+// firstDog.speak('Roarf!');
+
+// firstCat = new Cat;
+// firstCat.name = "Bagheera";
+// firstCat.breed = "Leopard";
+// firstCat.speak('Rawown!');
+
+
+// Understanding call and apply invocation
+var speak = function(what) {
+	console.log(what);
+	console.log(this.love);
 }
 
-var Dog = function() {
-	var name, breed;
-}
-var Cat = function() {
-	var name, breed;
-}
-
-Dog.prototype.speak = speak;
-Cat.prototype.speak = speak;
-
-firstDog = new Dog;
-firstDog.name = "Assagi";
-firstDog.breed = "African Hunting";
-firstDog.speak('Roarf!');
-
-firstCat = new Cat;
-firstCat.name = "Bagheera";
-firstCat.breed = "Leopard";
-firstCat.speak('Rawown!');
+var saySomething = {normal: "Rawown!", love: "puuuuur"}
+speak.apply(saySomething, ['meouff']);
